@@ -1,1 +1,2 @@
 # SportsEquipmentManagementProject
+# SportsEquipmentProject
