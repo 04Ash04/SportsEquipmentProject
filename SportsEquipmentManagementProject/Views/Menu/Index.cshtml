@@ -1,0 +1,25 @@
+@model SportsEquipmentManagementProject.Controllers.MenuController
+
+@{
+        ViewBag.Title = "Меню";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Меню</title>
+</head>
+<body>
+<div>
+    <ul>
+        <li><a href="/Inventory/Index">Каталог</a></li>
+        <li><a href="/PurchasePlan/Index">Заявки</a></li>
+        @if (ViewBag.Role == "Admin")
+        {
+        <li><a href="/PurchasePlan/Index">Отчеты</a></li>
+        }
+    </ul>    
+</div>
+</body>
+</html>

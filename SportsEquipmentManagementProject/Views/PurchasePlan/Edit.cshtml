@@ -1,0 +1,23 @@
+@model SportsEquipmentManagementProject.Models.PurchasePlan
+
+
+<h2>Редактировать план закупок</h2>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+@Html.HiddenFor(m => m.Id)
+<div class="form-group">
+    @Html.LabelFor(m => m.ItemName)
+    @Html.TextBoxFor(m => m.ItemName, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Price)
+    @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.SupplierName)
+    @Html.DropDownListFor(m => m.SupplierName, new SelectList(new[] { "Новый", "Испорченный", "Старый" }), "Выберите", new { @class = "form-control" })
+</div>
+<button type="submit" class="btn btn-primary">Сохранить</button>
+}

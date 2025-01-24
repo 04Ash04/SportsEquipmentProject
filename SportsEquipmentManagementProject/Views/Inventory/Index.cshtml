@@ -1,0 +1,38 @@
+@model List<Inventory>
+
+<h2>Список инвентаря</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Количество</th>
+        <th>Качество</th>
+        @if (User.IsInRole("Admin"))
+        {
+        <th>Действия</th>
+        }
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Quantity</td>
+        <td>@item.Condition</td>
+        @if (User.IsInRole("Admin"))
+        {
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+        </td>
+        }
+    </tr>
+    }
+    </tbody>
+</table>
+
+@if (ViewBag.Role == "Admin")
+{
+<p>@Html.ActionLink("Добавить новый", "Create")</p>
+}

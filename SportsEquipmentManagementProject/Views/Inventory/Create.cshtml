@@ -1,0 +1,21 @@
+@model Inventory
+
+<h2>Добавить инвентарь</h2>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+<div class="form-group">
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Quantity)
+    @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control", type = "number" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Condition)
+    @Html.DropDownListFor(m => m.Condition, new SelectList(new[] { "Новый", "Испорченный", "Старый" }), "Выберите", new { @class = "form-control" })
+</div>
+<button type="submit" class="btn btn-primary">Сохранить</button>
+}

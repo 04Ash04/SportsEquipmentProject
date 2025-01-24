@@ -1,0 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using SportsEquipmentManagementProject.Models;
+
+namespace SportsEquipmentManagementProject.Context;
+
+public class ApplicationDbContext : DbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<User> Users { get; set; }
+    public DbSet<Inventory> Inventories { get; set; }
+    public DbSet<PurchasePlan> PurchasePlans { get; set; }
+}
