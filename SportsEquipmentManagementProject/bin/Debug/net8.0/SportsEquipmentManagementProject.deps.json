@@ -19,7 +19,8 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
           "MySql.Data": "9.1.0",
           "MySql.Data.EntityFramework": "9.1.0",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0-preview.2.efcore.9.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "9.0.0-preview.2.efcore.9.0.0",
+          "bootstrap": "5.3.3"
         },
         "runtime": {
           "SportsEquipmentManagementProject.dll": {}
@@ -68,6 +69,7 @@
           }
         }
       },
+      "bootstrap/5.3.3": {},
       "BouncyCastle.Cryptography/2.3.1": {
         "runtime": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
@@ -2476,6 +2478,13 @@
       "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
+    },
+    "bootstrap/5.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iQohLXwneNPDyW4x24mKQ90qGwT5WTtNl3KybL0koTluJPjKYxFCU/NTLHsJiWR2n7VmnwcpAgr8TR42KNmPOg==",
+      "path": "bootstrap/5.3.3",
+      "hashPath": "bootstrap.5.3.3.nupkg.sha512"
     },
     "BouncyCastle.Cryptography/2.3.1": {
       "type": "package",

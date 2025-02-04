@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+      <PackageReference Include="bootstrap" Version="5.3.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="9.0.0" />
@@ -29,6 +30,7 @@
 
     <ItemGroup>
       <None Include="wwwroot\css\home.css" />
+      <None Include="wwwroot\css\login.css" />
     </ItemGroup>
 
     <ItemGroup>
@@ -39,6 +41,9 @@
       <_ContentIncludedByDefault Remove="Views\Inventory\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Inventory\Add.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Inventory\List.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Request\AdminIndex.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Request\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Request\UserIndex.cshtml" />
     </ItemGroup>
 
 </Project>

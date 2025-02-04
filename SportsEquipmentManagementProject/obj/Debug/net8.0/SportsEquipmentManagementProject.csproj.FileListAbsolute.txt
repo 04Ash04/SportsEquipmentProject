@@ -326,3 +326,4 @@
 /Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/bin/Debug/net8.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
 /Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll
+/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/obj/Debug/net8.0/SportsEquipmentManagementProject.sourcelink.json

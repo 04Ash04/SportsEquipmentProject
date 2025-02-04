@@ -1,0 +1,29 @@
+@model List<SportsEquipmentManagementProject.Models.UserInventory>
+@{
+ViewBag.Title = "Закрепить инвентарь";
+}
+
+<h2>Закрепить инвентарь за пользователем</h2>
+
+<form method="post">
+    <label>Пользователь:</label>
+    <select name="userId">
+        @foreach (var user in ViewBag.Users)
+        {
+        <option value="@user.Id">@user.UserName</option>
+        }
+    </select>
+
+    <label>Инвентарь:</label>
+    <select name="inventoryId">
+        @foreach (var item in ViewBag.Inventory)
+        {
+        <option value="@item.Id">@item.Name (Доступно: @item.Quantity)</option>
+        }
+    </select>
+
+    <label>Количество:</label>
+    <input type="number" name="quantity" min="1" required />
+
+    <button type="submit">Закрепить</button>
+</form>

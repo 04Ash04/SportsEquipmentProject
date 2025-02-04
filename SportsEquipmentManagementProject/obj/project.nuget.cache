@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QhUBrwbPemfHM3fkIu6PGuMpV4DrniVb35c/x3cFG6Y7RwODCjelGvpaGSmkt0TAkjr6S5pg/kBaaHME+6yNoA==",
+  "dgSpecHash": "sBIwVPLhWnn4ICGFw4hJIXALD9a1yCOVdAlLdTh6iA2WZvjFzTK5GaJchxfDd91CHSLD7Bm6gxodEaLa7CWbGg==",
   "success": true,
   "projectFilePath": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/SportsEquipmentManagementProject.csproj",
   "expectedPackageFiles": [
     "/Users/sofiaegorova/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/sofiaegorova/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/Users/sofiaegorova/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/Users/sofiaegorova/.nuget/packages/bootstrap/5.3.3/bootstrap.5.3.3.nupkg.sha512",
     "/Users/sofiaegorova/.nuget/packages/bouncycastle.cryptography/2.3.1/bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "/Users/sofiaegorova/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/Users/sofiaegorova/.nuget/packages/google.protobuf/3.26.1/google.protobuf.3.26.1.nupkg.sha512",

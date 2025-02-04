@@ -2,14 +2,49 @@
     ViewBag.Title = "Главная страница";
 }
 
-<link href="~/css/home.css" rel="stylesheet" type="text/css" />
-
 <div class="container mt-5 text-center">
-    <h1 class="display-4 text-primary">Спорт — это сила!</h1>
-    <p class="lead">Занимайтесь спортом, чтобы стать сильнее каждый день.</p>
-   
-    <div>
-        <a href="@Url.Action("Login", "Account")" class="btn btn-primary btn-lg mx-2">Войти</a>
-        <a href="@Url.Action("Register", "Account")" class="btn btn-success btn-lg mx-2">Регистрация</a>
+    <!-- Название сайта -->
+    <h1 class="site-title">Гантелька</h1>
+
+    <!-- Изображение гантели -->
+    <div class="dumbbell-image">
+        <img src="/images/dumbbell.png" alt="Гантель" class="img-fluid">
+    </div>
+
+    <!-- Описание про спорт -->
+    <h2 class="text-primary mt-4">Спорт — это сила!</h2>
+
+    <!-- Кнопки входа и регистрации -->
+    <div class="mt-4">
+        <a href="@Url.Action("Login", "Account")" class="btn btn-primary btn-lg rounded-pill mx-2">Войти</a>
+        <a href="@Url.Action("Register", "Account")" class="btn btn-info btn-lg rounded-pill mx-2">Регистрация</a>
     </div>
 </div>
+
+<style>
+    .site-title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .dumbbell-image img {
+        max-width: 150px;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .btn-primary {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #117a8b;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+</style>

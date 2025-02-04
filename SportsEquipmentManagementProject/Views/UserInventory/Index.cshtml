@@ -1,0 +1,26 @@
+@model List<SportsEquipmentManagementProject.Models.UserInventory>
+@{
+    ViewBag.Title = "Закрепленный инвентарь";
+}
+
+<h2>Список закрепленного инвентаря</h2>
+@Html.ActionLink("Закрепить инвентарь", "Assign")
+<table>
+    <thead>
+    <tr>
+        <th>Пользователь</th>
+        <th>Инвентарь</th>
+        <th>Количество</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.User.UserName</td>
+            <td>@item.Inventory.Name</td>
+            <td>@item.Quantity</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,9 +1,7 @@
 @{
-    ViewBag.Title = "Вход";
+    ViewBag.Title = "Регистрация";
 }
-
-<h2>Вход</h2>
-
+<h2>Регистрация</h2>
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
 {
     <div>
@@ -14,9 +12,11 @@
         <label>Пароль:</label>
         <input type="password" name="password" required />
     </div>
-    <button type="submit">Войти</button>
+   
+    <button type="submit">Взод</button>
 }
+
 @if (ViewBag.Error != null)
 {
-    <div style="color:#873b3b;">@ViewBag.Error</div>
+    <div style="color:#a12c2c;">@ViewBag.Error</div>
 }
