@@ -7,7 +7,7 @@
         <th>Название</th>
         <th>Количество</th>
         <th>Качество</th>
-        @if (User.IsInRole("Admin"))
+        @if (ViewBag.Role == "Admin")
         {
         <th>Действия</th>
         }
@@ -20,7 +20,7 @@
         <td>@item.Name</td>
         <td>@item.Quantity</td>
         <td>@item.Condition</td>
-        @if (User.IsInRole("Admin"))
+        @if (ViewBag.Role == "Admin")
         {
         <td>
             @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |

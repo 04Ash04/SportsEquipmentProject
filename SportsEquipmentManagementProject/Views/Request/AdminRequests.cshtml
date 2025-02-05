@@ -1,0 +1,60 @@
+@model List<SportsEquipmentManagementProject.Models.Request>
+@{
+ViewBag.Title = "Все заявки";
+}
+
+<h2>Все заявки</h2>
+
+<form method="get">
+    <label>Фильтр по статусу:</label>
+    <select name="status">
+        <option value="">Все</option>
+        <option value="Ожидание">Ожидание</option>
+        <option value="Отклонено">Отклонено</option>
+        <option value="Получено">Получено</option>
+    </select>
+
+    <label>Сортировка:</label>
+    <select name="sortOrder">
+        <option value="asc">По времени (по возрастанию)</option>
+        <option value="desc">По времени (по убыванию)</option>
+    </select>
+
+    <button type="submit">Применить</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Пользователь</th>
+        <th>Инвентарь</th>
+        <th>Тип</th>
+        <th>Статус</th>
+        <th>Дата</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var request in Model)
+    {
+    <tr>
+        <td>@request.User.UserName</td>
+        <td>@request.Inventory.Name</td>
+        <td>@request.Type</td>
+        <td>@request.Status</td>
+        <td>@request.CreatedAt</td>
+        <td>
+            <form method="post" action="@Url.Action("UpdateStatus", "Request")">
+                <input type="hidden" name="requestId" value="@request.Id" />
+                <select name="status">
+                    <option value="Ожидание">Ожидание</option>
+                    <option value="Отклонено">Отклонено</option>
+                    <option value="Получено">Получено</option>
+                </select>
+                <button type="submit">Обновить</button>
+            </form>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>

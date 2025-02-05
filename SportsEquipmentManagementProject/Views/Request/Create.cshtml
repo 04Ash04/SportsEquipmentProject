@@ -1,0 +1,24 @@
+@{
+ViewBag.Title = "Создать заявку";
+}
+
+<h2>Создать заявку</h2>
+
+<form method="post">
+    <label>Выберите инвентарь:</label>
+    <select name="inventoryId">
+        @foreach (var item in ViewBag.Inventory)
+        {
+        <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+
+    <label>Тип заявки:</label>
+    <select name="type">
+        <option value="Получение">Получение</option>
+        <option value="Ремонт">Ремонт</option>
+        <option value="Замена">Замена</option>
+    </select>
+
+    <button type="submit">Отправить</button>
+</form>

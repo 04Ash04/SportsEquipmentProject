@@ -1,0 +1,46 @@
+@model List<SportsEquipmentManagementProject.Models.Request>
+@{
+ViewBag.Title = "Мои заявки";
+}
+
+<h2>Мои заявки</h2>
+
+<form method="get">
+    <label>Фильтр по статусу:</label>
+    <select name="status">
+        <option value="">Все</option>
+        <option value="Ожидание">Ожидание</option>
+        <option value="Отклонено">Отклонено</option>
+        <option value="Получено">Получено</option>
+    </select>
+
+    <label>Сортировка:</label>
+    <select name="sortOrder">
+        <option value="asc">По времени (по возрастанию)</option>
+        <option value="desc">По времени (по убыванию)</option>
+    </select>
+
+    <button type="submit">Применить</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Инвентарь</th>
+        <th>Тип</th>
+        <th>Статус</th>
+        <th>Дата создания</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var request in Model)
+    {
+    <tr>
+        <td>@request.Inventory.Name</td>
+        <td>@request.Type</td>
+        <td>@request.Status</td>
+        <td>@request.CreatedAt</td>
+    </tr>
+    }
+    </tbody>
+</table>
