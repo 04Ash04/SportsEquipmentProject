@@ -2,9 +2,8 @@
 @{
 ViewBag.Title = "Мои заявки";
 }
-
 <h2>Мои заявки</h2>
-
+<a href="@Url.Action("Create", "Request")" class="btn btn-primary btn-create">Добавить новую заявку</a>
 <form method="get">
     <label>Фильтр по статусу:</label>
     <select name="status">

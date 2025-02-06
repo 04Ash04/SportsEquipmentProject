@@ -65,7 +65,7 @@ public class AccountController : Controller
         // Установим сессию
         HttpContext.Session.SetString("UserName", user.UserName);
         HttpContext.Session.SetString("Role", user.Role);
-
+        HttpContext.Session.SetInt32("UserId", user.Id);
         return RedirectToAction("Index", "Menu");
     }
 

@@ -181,8 +181,16 @@
       "PackagePath": "staticwebassets/SportsEquipmentManagementProject.bundle.scp.css"
     },
     {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Menu/menuIndex.css",
+      "PackagePath": "staticwebassets/css/Menu/menuIndex.css"
+    },
+    {
       "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/index.css",
       "PackagePath": "staticwebassets/css/PurchasePlan/index.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/purchasePlanCreate.css",
+      "PackagePath": "staticwebassets/css/PurchasePlan/purchasePlanCreate.css"
     },
     {
       "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/login.css",

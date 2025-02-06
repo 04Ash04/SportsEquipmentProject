@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OuNKbojP81VN4KPzzjg/iWUTuIqd+EiWbd91tCSSuLI=",
+  "Hash": "D7yuDxNko+c29YA2hTz5Q6FS4hIPnIsDkC8KNDFzIxE=",
   "Source": "SportsEquipmentManagementProject",
   "BasePath": "_content/SportsEquipmentManagementProject",
   "Mode": "Default",
@@ -910,6 +910,25 @@
       "OriginalItemSpec": "wwwroot/css/login.css"
     },
     {
+      "Identity": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Menu/menuIndex.css",
+      "SourceId": "SportsEquipmentManagementProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/",
+      "BasePath": "_content/SportsEquipmentManagementProject",
+      "RelativePath": "css/Menu/menuIndex.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/Menu/menuIndex.css"
+    },
+    {
       "Identity": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/index.css",
       "SourceId": "SportsEquipmentManagementProject",
       "SourceType": "Discovered",
@@ -927,6 +946,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/PurchasePlan/index.css"
+    },
+    {
+      "Identity": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/purchasePlanCreate.css",
+      "SourceId": "SportsEquipmentManagementProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/",
+      "BasePath": "_content/SportsEquipmentManagementProject",
+      "RelativePath": "css/PurchasePlan/purchasePlanCreate.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/PurchasePlan/purchasePlanCreate.css"
     },
     {
       "Identity": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/site.css",

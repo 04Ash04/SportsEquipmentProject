@@ -36,6 +36,7 @@ public class UserInventoryController : Controller
             var userInventory = new UserInventory
             {
                 UserId = userId,
+                Quantity = quantity,
                 InventoryId = inventoryId,
             };
             _context.UserInventories.Add(userInventory);
@@ -51,14 +52,13 @@ public class UserInventoryController : Controller
         return View(assignedInventory);
     }
     
-    [Authorize]
     public ActionResult UserInventory()
     {
-        var userId=HttpContext.Session.GetInt32("UserId");
+        var userId = HttpContext.Session.GetInt32("UserId");
         if (userId == null)
             return RedirectToAction("Login", "Account");
         
-        var userInventory = _context.UserInventories.Where(ui => ui.UserId == (int)userId).Include("Inventory").ToList();
+        var userInventory = _context.UserInventories.Where(ui => ui.UserId == userId).Include("Inventory").ToList();
         return View(userInventory);
     }
 

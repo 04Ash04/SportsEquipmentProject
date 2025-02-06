@@ -12,9 +12,13 @@ public class PurchasePlan
 
     [Required]
     [Range(0, double.MaxValue, ErrorMessage = "Цена должна быть положительным числом")]
-    [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
     [Display(Name = "Цена")]
     public decimal Price { get; set; }
+    
+    [Required]
+    [Display(Name = "Количество")]
+    [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+    public int Quantity { get; set; }
 
     [Required]
     [Display(Name = "Поставщик")]

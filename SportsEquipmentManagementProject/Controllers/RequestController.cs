@@ -23,13 +23,13 @@ public class RequestController : Controller
     [HttpPost]
     public ActionResult Create(int inventoryId, string type)
     {
-        var userId=HttpContext.Session.GetInt32("UserId");
+        var userId = HttpContext.Session.GetInt32("UserId");
         if (userId == null)
             return RedirectToAction("Login", "Account");
-
+        ViewBag.Id = userId;
         var request = new Request
         {
-            UserId = (int)userId,
+            UserId = userId.Value,
             InventoryId = inventoryId,
             Type = type,
             Status = "Ожидание",
@@ -43,12 +43,13 @@ public class RequestController : Controller
     // 2. Просмотр своих заявок с фильтрацией и сортировкой
     public ActionResult UserRequests(string status, string sortOrder)
     {
-        var userId=HttpContext.Session.GetInt32("UserId");
+        var userId = HttpContext.Session.GetInt32("UserId");
         if (userId == null)
             return RedirectToAction("Login", "Account");
-
-        var requests = _context.Requests.Where(r => r.UserId == userId);
-
+        ViewBag.Id = userId;
+        var requests = _context.Requests
+            .Include(r => r.Inventory) // Это ключевое изменение
+            .Where(r => r.UserId == userId);
         // Фильтрация по статусу
         if (!string.IsNullOrEmpty(status))
         {

@@ -2,10 +2,10 @@
 
 @{
         ViewBag.Title = "Меню";
+        <link rel="stylesheet" href="~/css/Menu/menuIndex.css"/>
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Меню</title>
@@ -16,12 +16,12 @@
         <li><a href="/Inventory/Index">Каталог</a></li>
         @if (ViewBag.Role == "User")
         {
-            <li><a href="/Request/UserIndex">Мои заявки</a></li>
+            <li><a href="/Request/UserRequests">Мои заявки</a></li>
             <li><a href="/UserInventory/UserInventory">Мой инвентарь</a></li>
         }
         @if (ViewBag.Role == "Admin")
         {
-            <li><a href="/Request/AdminIndex">Заявки пользователей</a></li>
+            <li><a href="/Request/AdminRequests">Заявки пользователей</a></li>
             <li><a href="/PurchasePlan/Index">План покупок</a></li>
             <li><a href="/UserInventory/Index">Закрепление инвентаря</a></li>
         }
@@ -29,3 +29,4 @@
 </div>
 </body>
 </html>
+

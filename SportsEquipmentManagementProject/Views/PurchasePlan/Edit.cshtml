@@ -13,11 +13,15 @@
 </div>
 <div class="form-group">
     @Html.LabelFor(m => m.Price)
-    @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number" })
+    @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Quantity)
+    @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control", type = "number" })
 </div>
 <div class="form-group">
     @Html.LabelFor(m => m.SupplierName)
-    @Html.DropDownListFor(m => m.SupplierName, new SelectList(new[] { "Новый", "Испорченный", "Старый" }), "Выберите", new { @class = "form-control" })
+    @Html.TextBoxFor(m => m.SupplierName, new { @class = "form-control" })
 </div>
 <button type="submit" class="btn btn-primary">Сохранить</button>
 }

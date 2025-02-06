@@ -1,23 +1,29 @@
 @model IEnumerable<SportsEquipmentManagementProject.Models.PurchasePlan>
 <link rel="stylesheet" href="~/css/PurchasePlan/index.css"/>
 <h2>План закупок</h2>
-<p>
-    @Html.ActionLink("Добавить новый план", "Create")
-</p>
+<div class="text-left">
+    <a href="@Url.Action("Create", "PurchasePlan")" class="btn btn-primary btn-create">Добавить новую позицию</a>
+</div>
 <table class="table table-hover table-custom">
     <thead>
     <tr>
         <th>Название инвентаря</th>
-        <th>Цена</th>
+        <th>Цена за шт.</th>
+        <th>Количество</th>
+        <th>Общая сумма</th>
         <th>Поставщик</th>
+        <th>Действия</th>
     </tr>
     </thead>
     <tbody>
     @foreach (var item in Model)
     {
+        var totalPrice = item.Price * item.Quantity;
     <tr>
         <td>@item.ItemName</td>
-        <td>@item.Price</td>
+        <td>@Math.Round(item.Price,2)</td>
+        <td>@item.Quantity</td>
+        <td>@Math.Round(totalPrice,2)</td>
         <td>@item.SupplierName</td>
         <td>
             @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |
