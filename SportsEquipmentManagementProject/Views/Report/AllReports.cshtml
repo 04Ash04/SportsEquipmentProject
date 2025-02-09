@@ -1,0 +1,88 @@
+@model List<SportsEquipmentManagementProject.Models.Report>
+@{
+ViewBag.Title = "Все отчеты";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/Report/reportIndex.css">
+
+<div class="container py-5">
+    <a href="@Url.Action("Index", "Menu")" class="btn btn-back">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="mb-0"><i class="fas fa-file-alt me-2"></i>Все отчеты</h2>
+                <a href="@Url.Action("Create", "Report")" class="btn btn-add">
+                    <i class="fas fa-plus-circle me-2"></i>Создать отчет
+                </a>
+            </div>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-custom mb-0">
+                    <thead class="table-header">
+                    <tr>
+                        <th>Пользователь</th>
+                        <th>Инвентарь</th>
+                        <th>Статус</th>
+                        <th>Описание</th>
+                        <th>Дата</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var report in Model)
+                    {
+                        <tr>
+                            <td>@report.User.UserName</td>
+                            <td>@report.Inventory.Name</td>
+                            <td>
+                                <span class="status-badge @GetStatusClass(report.Status)">
+                                    @report.Status
+                                </span>
+                            </td>
+                            <td class="usage-info-cell">
+                                <div class="usage-content">@report.UsageInfo</div>
+                            </td>
+                            <td>@report.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                        </tr>
+                    }
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center py-4">
+                                <i class="fas fa-inbox fa-2x mb-3 text-muted"></i>
+                                <p class="text-muted">Нет доступных отчетов</p>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.usage-content').forEach(content => {
+            content.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+    });
+</script>
+@functions {
+string GetStatusClass(string status)
+{
+return status switch
+{
+"Используется" => "bg-success",
+"Не используется" => "bg-secondary",
+"Сломан" => "bg-danger",
+"На ремонте" => "bg-warning",
+_ => "bg-info"
+};
+}
+}

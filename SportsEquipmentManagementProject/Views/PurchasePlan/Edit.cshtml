@@ -1,27 +1,82 @@
 @model SportsEquipmentManagementProject.Models.PurchasePlan
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/PurchasePlan/purchasePlanEdit.css">
 
+<div class="container py-5">
+    <div class="card edit-card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0"><i class="fas fa-edit me-2"></i>Редактирование позиции</h2>
+        </div>
 
-<h2>Редактировать позицию</h2>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
 
-@using (Html.BeginForm())
-{
-@Html.AntiForgeryToken()
-@Html.HiddenFor(m => m.Id)
-<div class="form-group">
-    @Html.LabelFor(m => m.ItemName)
-    @Html.TextBoxFor(m => m.ItemName, new { @class = "form-control" })
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ItemName, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(m => m.ItemName, new {
+                        @class = "form-control form-control-lg",
+                        placeholder = "Название товара",
+                        required = "required"
+                        })
+                        @Html.ValidationMessageFor(m => m.ItemName, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.SupplierName, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(m => m.SupplierName, new {
+                        @class = "form-control form-control-lg",
+                        placeholder = "Имя поставщика",
+                        required = "required"
+                        })
+                        @Html.ValidationMessageFor(m => m.SupplierName, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Price, new { @class = "form-label fw-bold" })
+                        <div class="input-group">
+                            <span class="input-group-text bg-secondary text-white">₽</span>
+                            @Html.TextBoxFor(m => m.Price, new {
+                            @class = "form-control form-control-lg",
+                            type = "number",
+                            placeholder = "0.00",
+                            @Value = Model.Price.ToString("0.00")
+                            })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Price, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Quantity, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(m => m.Quantity, new {
+                        @class = "form-control form-control-lg",
+                        type = "number",
+                        min = "1",
+                        placeholder = "Количество",
+                        required = "required"
+                        })
+                        @Html.ValidationMessageFor(m => m.Quantity, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                <button type="submit" class="btn btn-save btn-lg px-5">
+                    <i class="fas fa-save me-2"></i>Сохранить
+                </button>
+            </div>
+            }
+        </div>
+    </div>
 </div>
-<div class="form-group">
-    @Html.LabelFor(m => m.Price)
-    @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(m => m.Quantity)
-    @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control", type = "number" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(m => m.SupplierName)
-    @Html.TextBoxFor(m => m.SupplierName, new { @class = "form-control" })
-</div>
-<button type="submit" class="btn btn-primary">Сохранить</button>
-}

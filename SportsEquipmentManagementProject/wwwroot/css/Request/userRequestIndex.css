@@ -1,0 +1,131 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.page-title {
+    color: #2d4b6a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #3f658e;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-back:hover {
+    background-color: #375f87;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(112, 163, 216, 0.2);
+}
+.btn-add {
+    background-color: #3f658e;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-add:hover {
+    background-color: #375f87;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45,75,106,0.3);
+}
+
+.filter-card {
+    border-radius: 12px;
+    border: 2px solid #567C8D;
+    background-color: #fff;
+}
+
+.btn-filter {
+    background-color: #829db8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+    background-color: #567C8D;
+    transform: translateY(-2px);
+}
+
+.table-custom {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: #f8f9fa;
+    margin-bottom: 0;
+}
+
+.table-header {
+    background: #7a9dbf !important;
+    color: white;
+}
+
+.table-header th {
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+}
+
+.table-custom > tbody > tr {
+    transition: all 0.2s ease;
+}
+
+.table-custom > tbody > tr:hover {
+    background-color: #f0f4f8;
+    transform: translateX(5px);
+}
+
+.table-custom td {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+    border-color: #dee2e6;
+}
+
+.status-badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    display: inline-block;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(45,75,106,0.1);
+}
+.card-header {
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    background: #3c5c85 !important;
+}
+.form-select {
+    border: 2px solid #829db8;
+    border-radius: 8px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232d4b6a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+}
+
+.form-select:focus {
+    border-color: #2d4b6a;
+    box-shadow: 0 0 0 0.25rem rgba(86,124,141,0.25);
+}

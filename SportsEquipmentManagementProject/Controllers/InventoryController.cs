@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using Microsoft.AspNetCore.Authorization;
 using SportsEquipmentManagementProject.Context;
 using SportsEquipmentManagementProject.Models;
+
+namespace SportsEquipmentManagementProject.Controllers;
 
 public class InventoryController : Controller
 {
@@ -16,38 +16,37 @@ public class InventoryController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-        var inventories = _context.Inventories.ToList();
         var role = HttpContext.Session.GetString("Role");
-
         if (role == null)
+        {
             return RedirectToAction("Login", "Account");
+        }
 
+        var inventories = _context.Inventories.ToList();
         ViewBag.Role = role;
         return View(inventories);
     }
 
-    [HttpGet]
-    
     public IActionResult Create()
     {
         return View();
     }
 
     [HttpPost]
-  
-    public IActionResult Create(Inventory inventory)
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(Inventory inventory)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            _context.Inventories.Add(inventory);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            return View(inventory);
         }
-        return View(inventory);
+
+        _context.Add(inventory);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
     }
 
     [HttpGet]
-  
     public IActionResult Edit(int id)
     {
         var inventory = _context.Inventories.Find(id);
@@ -59,7 +58,6 @@ public class InventoryController : Controller
     }
 
     [HttpPost]
- 
     public IActionResult Edit(Inventory inventory)
     {
         if (ModelState.IsValid)
@@ -71,16 +69,31 @@ public class InventoryController : Controller
         return View(inventory);
     }
 
-    [HttpPost]
-   
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int? id)
     {
-        var inventory = _context.Inventories.Find(id);
-        if (inventory != null)
+        if (id == null)
         {
-            _context.Inventories.Remove(inventory);
-            _context.SaveChanges();
+            return NotFound();
         }
-        return RedirectToAction("Index");
+
+        var inventory =  _context.Inventories
+            .FirstOrDefault(m => m.Id == id);
+        if (inventory == null)
+        {
+            return NotFound();
+        }
+
+        return View(inventory);
     }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var inventory = await _context.Inventories.FindAsync(id);
+        _context.Inventories.Remove(inventory);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+
 }

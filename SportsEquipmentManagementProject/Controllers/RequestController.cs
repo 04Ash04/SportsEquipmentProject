@@ -16,9 +16,17 @@ public class RequestController : Controller
     [HttpGet]
     public ActionResult Create()
     {
+        var userId = HttpContext.Session.GetInt32("UserId");
+        var userInventory = _context.UserInventories
+            .Where(ui => ui.UserId == userId)
+            .Select(ui => ui.InventoryId)
+            .ToList();
+
         ViewBag.Inventory = _context.Inventories.ToList();
+        ViewBag.UserInventory = userInventory; 
         return View();
     }
+
 
     [HttpPost]
     public ActionResult Create(int inventoryId, string type)

@@ -1,24 +1,74 @@
 @{
 ViewBag.Title = "Создать заявку";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/Request/requestCreate.css">
 
-<h2>Создать заявку</h2>
+<div class="container py-5">
+    <div class="card shadow-lg border-0 request-card">
+        <div class="card-header bg-primary text-white py-3">
+            <h2 class="mb-0"><i class="fas fa-file-alt me-2"></i>Создать заявку</h2>
+        </div>
 
-<form method="post">
-    <label>Выберите инвентарь:</label>
-    <select name="inventoryId">
-        @foreach (var item in ViewBag.Inventory)
-        {
-        <option value="@item.Id">@item.Name</option>
+        <div class="card-body">
+            <form method="post">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label fw-bold">Инвентарь:</label>
+                            <select name="inventoryId" class="form-select form-select-lg" required>
+                                @foreach (var item in ViewBag.Inventory)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label fw-bold">Тип заявки:</label>
+                            <select name="type" class="form-select form-select-lg" required>
+                                <option value="Получение">Получение</option>
+                                <option value="Ремонт">Ремонт</option>
+                                <option value="Замена">Замена</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                    <button type="submit" class="btn btn-submit btn-lg px-5">
+                        <i class="fas fa-paper-plane me-2"></i>Отправить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const inventorySelect = document.querySelector("select[name='inventoryId']");
+    const typeSelect = document.querySelector("select[name='type']");
+    
+    const userInventory = @Html.Raw(Json.Serialize(ViewBag.UserInventory));
+
+    function updateRequestTypes() {
+        const selectedInventoryId = inventorySelect.value;
+        typeSelect.innerHTML = "";
+
+        if (userInventory.includes(parseInt(selectedInventoryId))) {
+            typeSelect.innerHTML += `
+                <option value="Ремонт">Ремонт</option>
+                <option value="Замена">Замена</option>
+            `;
+        } else {
+            typeSelect.innerHTML += `<option value="Получение">Получение</option>`;
         }
-    </select>
+    }
 
-    <label>Тип заявки:</label>
-    <select name="type">
-        <option value="Получение">Получение</option>
-        <option value="Ремонт">Ремонт</option>
-        <option value="Замена">Замена</option>
-    </select>
-
-    <button type="submit">Отправить</button>
-</form>
+    inventorySelect.addEventListener("change", updateRequestTypes);
+    updateRequestTypes();
+});
+</script>

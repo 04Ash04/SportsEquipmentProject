@@ -11,7 +11,6 @@ public class PurchasePlan
     public string ItemName { get; set; }
 
     [Required]
-    [Range(0, double.MaxValue, ErrorMessage = "Цена должна быть положительным числом")]
     [Display(Name = "Цена")]
     public decimal Price { get; set; }
     

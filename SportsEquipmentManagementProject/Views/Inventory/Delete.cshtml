@@ -1,18 +1,67 @@
 @model Inventory
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/Inventory/inventoryDelete.css">
 
-<h2>Удалить инвентарь</h2>
+<div class="container py-5">
+    <div class="card shadow-lg delete-card mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-danger text-white">
+            <h2 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Удаление инвентаря</h2>
+        </div>
+        
+        <div class="card-body">
+            <div class="alert alert-warning mb-4">
+                <h4 class="alert-heading">Вы уверены, что хотите удалить этот инвентарь?</h4>
+                <p class="mb-0">Данное действие невозможно будет отменить.</p>
+            </div>
 
-<p>Вы уверены, что хотите удалить?</p>
+            <div class="delete-info mb-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="detail-item">
+                            <span class="detail-label">Название:</span>
+                            <span class="detail-value">@Model.Name</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Количество:</span>
+                            <span class="detail-value">@Model.Quantity</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="detail-item">
+                            <span class="detail-label">Состояние:</span>
+                            <span class="detail-value condition-badge @GetConditionClass(Model.Condition)">
+                                @Model.Condition
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div>
-    <p><strong>Название:</strong> @Model.Name</p>
-    <p><strong>Количество:</strong> @Model.Quantity</p>
-    <p><strong>Качество:</strong> @Model.Condition</p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.Id)
+                <div class="d-flex justify-content-between">
+                    @Html.ActionLink("Отмена", "Index", null, new { @class = "btn btn-cancel" })
+                    <button type="submit" class="btn btn-delete">
+                        <i class="fas fa-trash-alt me-2"></i>Удалить
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
 </div>
 
-@using (Html.BeginForm())
-{
-@Html.AntiForgeryToken()
-<button type="submit" class="btn btn-danger">Удалить</button>
-@Html.ActionLink("Отмена", "Index")
+@functions {
+    string GetConditionClass(string condition)
+    {
+        return condition switch
+        {
+            "Новый" => "bg-success",
+            "Испорченный" => "bg-danger",
+            "Старый" => "bg-warning",
+            _ => "bg-secondary"
+        };
+    }
 }

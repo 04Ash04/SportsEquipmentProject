@@ -181,20 +181,76 @@
       "PackagePath": "staticwebassets/SportsEquipmentManagementProject.bundle.scp.css"
     },
     {
-      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Menu/menuIndex.css",
-      "PackagePath": "staticwebassets/css/Menu/menuIndex.css"
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Account/login.css",
+      "PackagePath": "staticwebassets/css/Account/login.css"
     },
     {
-      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/index.css",
-      "PackagePath": "staticwebassets/css/PurchasePlan/index.css"
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Inventory/inventoryCreate.css",
+      "PackagePath": "staticwebassets/css/Inventory/inventoryCreate.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Inventory/inventoryDelete.css",
+      "PackagePath": "staticwebassets/css/Inventory/inventoryDelete.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Inventory/inventoryEdit.css",
+      "PackagePath": "staticwebassets/css/Inventory/inventoryEdit.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Inventory/inventoryIndex.css",
+      "PackagePath": "staticwebassets/css/Inventory/inventoryIndex.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Menu/menuIndex.css",
+      "PackagePath": "staticwebassets/css/Menu/menuIndex.css"
     },
     {
       "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/purchasePlanCreate.css",
       "PackagePath": "staticwebassets/css/PurchasePlan/purchasePlanCreate.css"
     },
     {
-      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/login.css",
-      "PackagePath": "staticwebassets/css/login.css"
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/purchasePlanDelete.css",
+      "PackagePath": "staticwebassets/css/PurchasePlan/purchasePlanDelete.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/purchasePlanEdit.css",
+      "PackagePath": "staticwebassets/css/PurchasePlan/purchasePlanEdit.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/PurchasePlan/purchasePlanIndex.css",
+      "PackagePath": "staticwebassets/css/PurchasePlan/purchasePlanIndex.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Report/reportCreate.css",
+      "PackagePath": "staticwebassets/css/Report/reportCreate.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Report/reportIndex.css",
+      "PackagePath": "staticwebassets/css/Report/reportIndex.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Request/adminRequestIndex.css",
+      "PackagePath": "staticwebassets/css/Request/adminRequestIndex.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Request/requestCreate.css",
+      "PackagePath": "staticwebassets/css/Request/requestCreate.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/Request/userRequestIndex.css",
+      "PackagePath": "staticwebassets/css/Request/userRequestIndex.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/UserInventory/assignInventory.css",
+      "PackagePath": "staticwebassets/css/UserInventory/assignInventory.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/UserInventory/assignInventoryIndex.css",
+      "PackagePath": "staticwebassets/css/UserInventory/assignInventoryIndex.css"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/UserInventory/userInventory.css",
+      "PackagePath": "staticwebassets/css/UserInventory/userInventory.css"
     },
     {
       "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/css/site.css",
@@ -203,6 +259,10 @@
     {
       "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/images/menuPhoto.jpg",
+      "PackagePath": "staticwebassets/images/menuPhoto.jpg"
     },
     {
       "Id": "/Users/sofiaegorova/RiderProjects/SportsEquipmentManagementProject/SportsEquipmentManagementProject/wwwroot/js/login.js",

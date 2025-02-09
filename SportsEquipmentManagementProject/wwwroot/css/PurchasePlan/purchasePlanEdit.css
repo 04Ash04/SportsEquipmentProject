@@ -1,0 +1,57 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.edit-card {
+    border-radius: 15px;
+    border: 2px solid #567C8D;
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(45deg, #2d4b6a, #375f87) !important;
+    padding: 1.5rem 2rem;
+}
+
+.form-control {
+    border: 2px solid #829db8;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #2d4b6a;
+    box-shadow: 0 0 0 0.25rem rgba(86,124,141,0.25);
+}
+
+.form-label {
+    color: #2d4b6a;
+    font-size: 1.1rem;
+}
+
+.btn-save {
+    background-color: #2d4b6a;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    transition: all 0.3s ease;
+}
+
+.btn-save:hover {
+    background-color: #375f87;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45,75,106,0.3);
+}
+
+.input-group-text {
+    background-color: #829db8;
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+.text-danger {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}

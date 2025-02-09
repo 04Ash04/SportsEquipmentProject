@@ -1,0 +1,77 @@
+@{
+    ViewBag.Title = "Создать отчет";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/Report/reportCreate.css">
+
+<div class="container py-5">
+    <div class="card shadow-lg border-0 report-card">
+        <div class="card-header bg-primary text-white py-3">
+            <h2 class="mb-0"><i class="fas fa-file-contract me-2"></i>Создать отчет</h2>
+        </div>
+
+        <div class="card-body">
+            <form method="post">
+                <div class="row g-4">
+                    <!-- Пользователь -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label fw-bold"><i class="fas fa-user me-2"></i>Пользователь:</label>
+                            <select name="userId" class="form-select form-select-lg" required>
+                                @foreach (var user in ViewBag.Users)
+                                {
+                                    <option value="@user.Id">@user.UserName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Инвентарь -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label fw-bold"><i class="fas fa-box me-2"></i>Инвентарь:</label>
+                            <select name="inventoryId" class="form-select form-select-lg" required>
+                                @foreach (var item in ViewBag.Inventory)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Статус -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label fw-bold"><i class="fas fa-info-circle me-2"></i>Статус:</label>
+                            <select name="status" class="form-select form-select-lg" required>
+                                <option value="Используется">Используется</option>
+                                <option value="Не используется">Не используется</option>
+                                <option value="Сломан">Сломан</option>
+                                <option value="На ремонте">На ремонте</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Описание -->
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-label fw-bold"><i class="fas fa-file-alt me-2"></i>Описание:</label>
+                            <textarea name="usageInfo" 
+                                    class="form-control form-control-lg" 
+                                    rows="5"
+                                    placeholder="Введите детали использования..."
+                                    required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                    <button type="submit" class="btn btn-save btn-lg px-5">
+                        <i class="fas fa-save me-2"></i>Сохранить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

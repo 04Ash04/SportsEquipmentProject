@@ -21,10 +21,12 @@
         }
         @if (ViewBag.Role == "Admin")
         {
+            <li><a href="/Report/AllReports">Отчеты об использовании</a></li>
             <li><a href="/Request/AdminRequests">Заявки пользователей</a></li>
             <li><a href="/PurchasePlan/Index">План покупок</a></li>
             <li><a href="/UserInventory/Index">Закрепление инвентаря</a></li>
         }
+        <li><a href="/Home/Index">Выход</a></li>
     </ul>    
 </div>
 </body>

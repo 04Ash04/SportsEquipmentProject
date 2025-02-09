@@ -1,38 +1,79 @@
 @model List<Inventory>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/Inventory/inventoryIndex.css">
 
-<h2>Список инвентаря</h2>
-<table class="table">
-    <thead>
-    <tr>
-        <th>Название</th>
-        <th>Количество</th>
-        <th>Качество</th>
-        @if (ViewBag.Role == "Admin")
-        {
-        <th>Действия</th>
-        }
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>@item.Name</td>
-        <td>@item.Quantity</td>
-        <td>@item.Condition</td>
-        @if (ViewBag.Role == "Admin")
-        {
-        <td>
-            @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
-        </td>
-        }
-    </tr>
-    }
-    </tbody>
-</table>
+<div class="container py-5">
+    <a href="@Url.Action("Index", "Menu")" class="btn btn-back">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="mb-0"><i class="fas fa-boxes me-2"></i>Список инвентаря</h2>
+                @if (ViewBag.Role == "Admin")
+                {
+                    <a href="@Url.Action("Create", "Inventory")" class="btn btn-add">
+                        <i class="fas fa-plus-circle me-2"></i>Добавить
+                    </a>
+                }
+            </div>
+        </div>
 
-@if (ViewBag.Role == "Admin")
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-custom mb-0">
+                    <thead class="table-header">
+                    <tr>
+                        <th>Название</th>
+                        <th>Количество</th>
+                        <th>Качество</th>
+                        @if (ViewBag.Role == "Admin")
+                        {
+                            <th>Действия</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Quantity</td>
+                            <td>
+                                <span class="condition-badge @GetConditionClass(item.Condition)">
+                                    @item.Condition
+                                </span>
+                            </td>
+                            @if (ViewBag.Role == "Admin")
+                            {
+                                <td>
+                                    <a href="@Url.Action("Edit", "Inventory", new { id = item.Id })" class="btn btn-action btn-edit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="@Url.Action("Delete", "Inventory", new { id = item.Id })" class="btn btn-action btn-delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+string GetConditionClass(string condition)
 {
-<p>@Html.ActionLink("Добавить новый", "Create")</p>
+return condition switch
+{
+"Новый" => "bg-success",
+"Испорченный" => "bg-danger",
+"Старый" => "bg-warning",
+_ => "bg-secondary"
+};
+}
 }

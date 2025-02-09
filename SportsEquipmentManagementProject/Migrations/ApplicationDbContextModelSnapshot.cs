@@ -73,6 +73,40 @@ namespace SportsEquipmentManagementProject.Migrations
                     b.ToTable("PurchasePlans");
                 });
 
+            modelBuilder.Entity("SportsEquipmentManagementProject.Models.Report", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("InventoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UsageInfo")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InventoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reports");
+                });
+
             modelBuilder.Entity("SportsEquipmentManagementProject.Models.Request", b =>
                 {
                     b.Property<int>("Id")
@@ -156,6 +190,25 @@ namespace SportsEquipmentManagementProject.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserInventories");
+                });
+
+            modelBuilder.Entity("SportsEquipmentManagementProject.Models.Report", b =>
+                {
+                    b.HasOne("SportsEquipmentManagementProject.Models.Inventory", "Inventory")
+                        .WithMany()
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SportsEquipmentManagementProject.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Inventory");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SportsEquipmentManagementProject.Models.Request", b =>

@@ -1,0 +1,76 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.edit-card {
+    border-radius: 15px;
+    border: 2px solid #567C8D;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-header {
+    background: linear-gradient(45deg, #2d4b6a, #375f87) !important;
+    padding: 1.5rem 2rem;
+}
+
+.form-control, .form-select {
+    border: 2px solid #829db8;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2d4b6a;
+    box-shadow: 0 0 0 0.25rem rgba(86,124,141,0.25);
+}
+
+.form-label {
+    color: #2d4b6a;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-save {
+    background-color: #2d4b6a;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-save:hover {
+    background-color: #375f87;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45,75,106,0.3);
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232d4b6a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+}
+
+.is-valid {
+    border-color: #28a745 !important;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.text-danger {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(45,75,106,0.1);
+}

@@ -1,24 +1,54 @@
 @model List<SportsEquipmentManagementProject.Models.UserInventory>
 @{
-    ViewBag.Title = "Мой инвентарь";
+ViewBag.Title = "Мой инвентарь";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="~/css/UserInventory/userInventory.css">
 
-<h2>Мой инвентарь</h2>
+<div class="container py-5">
+    <a href="@Url.Action("Index", "Menu")" class="btn btn-back">
+        <i class="fas fa-arrow-left"></i>
+    </a>
 
-<table>
-    <thead>
-    <tr>
-        <th>Инвентарь</th>
-        <th>Количество</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Inventory.Name</td>
-            <td>@item.Quantity</td>
-        </tr>
-    }
-    </tbody>
-</table>
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white py-3">
+            <h2 class="mb-0"><i class="fas fa-box-open me-2"></i>Мой инвентарь</h2>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-custom mb-0">
+                    <thead class="table-header">
+                    <tr>
+                        <th>Инвентарь</th>
+                        <th>Количество</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.Inventory.Name</td>
+                        <td>
+                                    <span class="quantity-badge">
+                                        @item.Quantity
+                                    </span>
+                        </td>
+                    </tr>
+                    }
+                    @if (!Model.Any())
+                    {
+                    <tr>
+                        <td colspan="2" class="text-center py-4">
+                            <i class="fas fa-inbox fa-2x mb-3 text-muted"></i>
+                            <p class="text-muted">Нет закрепленного инвентаря</p>
+                        </td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
