@@ -11,3 +11,4 @@
 
 4.Запустить проект
 # 3. Cсылка на видеоролик:
+https://rutube.ru/video/private/ed26d7a60cff579edade54e2bf721852/?p=VplcXJy-BpfnFJIuoQNthA
