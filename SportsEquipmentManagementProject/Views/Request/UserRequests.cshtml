@@ -26,7 +26,7 @@ ViewBag.Title = "Мои заявки";
                         <option value="">Все</option>
                         <option value="Ожидание">Ожидание</option>
                         <option value="Отклонено">Отклонено</option>
-                        <option value="Получено">Получено</option>
+                        <option value="Одобрено">Одобрено</option>
                     </select>
                 </div>
 
@@ -100,7 +100,7 @@ return status switch
 {
 "Ожидание" => "bg-warning",
 "Отклонено" => "bg-danger",
-"Получено" => "bg-success",
+"Одобрено" => "bg-success",
 _ => "bg-secondary"
 };
 }

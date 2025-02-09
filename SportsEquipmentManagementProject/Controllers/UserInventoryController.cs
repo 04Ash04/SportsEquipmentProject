@@ -17,7 +17,7 @@ public class UserInventoryController : Controller
     // Страница для администратора: Закрепление инвентаря за пользователем
     public ActionResult Assign()
     {
-        ViewBag.Users = _context.Users.ToList();
+        ViewBag.Users = _context.Users.Where(u => u.Role != "Admin").ToList();;
         ViewBag.Inventory = _context.Inventories.ToList();
         return View();
     }

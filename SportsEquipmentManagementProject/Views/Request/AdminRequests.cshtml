@@ -23,9 +23,9 @@ ViewBag.Title = "Все заявки";
                             <label class="form-label fw-bold">Фильтр по статусу:</label>
                             <select name="status" class="form-select">
                                 <option value="">Все</option>
-                                <option value="Ожидание">Ожидание</option>
+                                <option value="Одобрено">Одобрено</option>
                                 <option value="Отклонено">Отклонено</option>
-                                <option value="Получено">Получено</option>
+                                <option value="Ожидание">Ожидание</option>
                             </select>
                         </div>
 
@@ -77,7 +77,7 @@ ViewBag.Title = "Все заявки";
                                     <select name="status" class="form-select form-select-sm">
                                         <option value="Ожидание">Ожидание</option>
                                         <option value="Отклонено">Отклонено</option>
-                                        <option value="Получено">Получено</option>
+                                        <option value="Одобрено">Одобрено</option>
                                     </select>
                                     <button type="submit" class="btn btn-action btn-update">
                                         <i class="fas fa-sync-alt"></i>
@@ -109,7 +109,7 @@ return status switch
 {
 "Ожидание" => "bg-warning",
 "Отклонено" => "bg-danger",
-"Получено" => "bg-success",
+"Одобрено" => "bg-success",
 _ => "bg-secondary"
 };
 }

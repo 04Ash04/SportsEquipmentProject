@@ -13,6 +13,6 @@ public class Inventory
     public int Quantity { get; set; }
     [Required]
     [Display(Name = "Состояние")]
-    public string Condition { get; set; } // New, Used, Broken
+    public string Condition { get; set; }
     
 }

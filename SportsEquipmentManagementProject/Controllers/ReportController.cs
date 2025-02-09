@@ -17,7 +17,7 @@ public class ReportController : Controller
     [HttpGet]
     public ActionResult Create()
     {
-        ViewBag.Users = _context.Users.ToList();
+        ViewBag.Users = _context.Users.Where(u => u.Role != "Admin").ToList();;
         ViewBag.Inventory = _context.Inventories.ToList();
         return View();
     }
